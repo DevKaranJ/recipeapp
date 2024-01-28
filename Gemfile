@@ -65,3 +65,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# gem installed as per project requirements
+
+gem 'devise' # for authentication
+
+gem 'sprockets-rails' # for asset pipeline
+
+gem 'nokogiri' # for parsing html
