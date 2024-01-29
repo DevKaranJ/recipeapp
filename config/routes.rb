@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resources :recipes, only: [:index, :show, :create]
-
+  resources :users, only: [:index, :show] do
+    resources :recipes, only: [:index, :show, :create]
+  end
 end
