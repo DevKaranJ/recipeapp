@@ -5,7 +5,7 @@
     <div class="recipe_container">
       <div class="recipe_info">
         <h2> <%= link_to recipe.name, recipes_path %> </h2>
-        <p> <%= button_to "Remove", recipes_path, method: :delete %> </p>
+        <p> <%= button_to "Remove", recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' } %> </p>
       </div>
       <div class="description">
         <h3><%= recipe.description %></h3>
