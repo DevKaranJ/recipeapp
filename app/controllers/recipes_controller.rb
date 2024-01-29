@@ -1,33 +1,31 @@
 class RecipesController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
-    @recipes = @user.recipes
+    @recipes = Recipe.all
   end
 
   def show
+    @recipe = Recipe.find(params[:id])
   end
 
   def new
-    @user = current_user
-    @recipe = @user.recipes.new
+    @recipe = Recipe.new
   end
 
   def create
-    @recipe = current_user.recipes.new(recipe_params)
+    @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
-      redirect_to user_recipes_path(current_user)
+      redirect_to recipes_path
     else
-      puts @recipe.errors.full_messages
-      render :new 
+      render :new, status: :unprocessable_entity 
     end
   end
 
   def destroy
-    @recipe = current_user.recipes.find(params[:id])
+    @recipe = Recipe.find(params[:id])
     @recipe.destroy
 
-    redirect_to user_recipes_path(current_user), notice: 'Recipe was successfully deleted'
+    redirect_to recipes_path, notice: 'Recipe was successfully deleted'
   end
 
   private
