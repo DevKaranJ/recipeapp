@@ -74,6 +74,4 @@ end
 
 gem 'devise' # for authentication
 
-gem 'sprockets-rails' # for asset pipeline
-
 gem 'nokogiri' # for parsing html
