@@ -1,4 +1,9 @@
 <h1>Public Recipes</h1>
-<%= render partial: "recipe", collection: @public_recipes %>
-
-<%= will_paginate @public_recipes %>
+<% @recipe_info.each do |recipe_name, info| %>
+  <div class="recipe-info">
+    <h2><%= recipe_name %></h2>
+    <p>Total Food Items: <%= info[:total_food_items] %></p>
+    <p>Total Price: $<%= info[:total_price] %></p>
+    <p>By <%= info[:user_name] %></p>
+  </div>
+<% end %>
