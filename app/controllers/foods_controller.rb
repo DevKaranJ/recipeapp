@@ -16,6 +16,7 @@ class FoodsController < ApplicationController
       redirect_to user_foods_path(current_user)
     else
       render :new
+    end
   end
 
   def destroy
