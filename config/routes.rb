@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get "up" => "rails/health#show", as: :rails_health_check # health check
-  
+
   # root "posts#index"
   root to: "users#index"
   devise_for :users
@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :foods, only: [:index, :new, :create, :destroy]
   resources :recipes, only: [:index, :new, :show, :create, :destroy]
   resources :public_recipes, only: [:index, :show, :destroy]
+  resources :general_shopping_lists, only: [:index]
 
 end
