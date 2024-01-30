@@ -1,0 +1,17 @@
+<h1>Recipe</h1>
+<div>
+  <h2><%= @recipe.name %></h2>
+</div>
+
+<div>
+  <p>Preparation time:<%= @recipe.preparation_time %> hour/s</p>
+  <p>Cooking time:<%= @recipe.cooking_time %> hour/s</p>
+  <p><%= @recipe.description %></p>
+</div>
+
+<div>
+  <%= link_to "Generate Shopping List" %>
+  <%= link_to "Add ingredients" %>
+  <br>
+</div>
+
