@@ -1,12 +1,12 @@
 class FoodsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @foods = @user.foods
+    @food = @user.foods
   end
 
   def new
     @user = current_user
-    @foods = @user.foods.build
+    @food = @user.foods.build
   end
 
   def create
