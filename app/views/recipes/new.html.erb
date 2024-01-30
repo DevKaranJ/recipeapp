@@ -1,6 +1,6 @@
 <h1>Create your recipe</h1>
 
-<%= form_with model: @recipe do |form| %>
+<%= form_with model: @recipe, url: user_recipes_path(@user), local: true, method: :post do |form| %>
   </div> 
     <%= form.label :name %><br>
     <%= form.text_field :name %>
