@@ -6,7 +6,7 @@ class FoodsController < ApplicationController
 
   def new
     @user = current_user
-    @food = @user.foods.build
+    @foods = @user.foods.build
   end
 
   def create
