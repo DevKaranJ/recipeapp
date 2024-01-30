@@ -23,14 +23,14 @@ default: &default
 
 development:
   <<: *default
-  database: recipeapp_development
+  database: recipe_development
 
 test:
   <<: *default
-  database: recipeapp_test
+  database: recipe_test
 
 production:
   <<: *default
-  database: recipeapp_production
+  database: recipe_production
   username: recipeapp
   password: <%= ENV["RECIPEAPP_DATABASE_PASSWORD"] %>

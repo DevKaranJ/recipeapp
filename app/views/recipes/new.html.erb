@@ -1,0 +1,33 @@
+<h1>Create your recipe</h1>
+
+<%= form_with model: @recipe do |form| %>
+  </div> 
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  <div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </div>
+  
+  <div>
+    <%= form.label :preparation_time %><br>
+    <%= form.text_field :preparation_time %>
+  </div>
+
+  <div>
+    <%= form.label :cooking_time %><br>
+    <%= form.text_field :cooking_time %>
+  </div>
+
+  <div>
+    <%= form.label :public %><br>
+    <%= form.text_field :public %>
+  </div>
+
+  <div>
+    <p><%= form.submit "Submit" %></p>
+  </div>
+  
+<% end %>
