@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-  @recipe = Recipe.find(params[:id])  
+    @recipe = Recipe.find(params[:id])
   end
 
   def new
@@ -19,7 +19,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to user_recipes_path(current_user)
     else
-      render :new, notice: "Recipe could not be created successfully"
+      render :new, notice: 'Recipe could not be created successfully'
     end
   end
 

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all 
+    @users = User.all
   end
 
   def show
@@ -10,5 +10,4 @@ class UsersController < ApplicationController
 
     redirect_to user_path
   end
-
 end
