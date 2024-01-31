@@ -3,7 +3,7 @@
 <%= form_with model: @food, url: user_foods_path(@user), local: true, method: :post do |form| %>
   <div>
     <%= form.label :name %> <br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, autocomplete: 'off' %>
   </div>
 
   <div>
@@ -13,12 +13,7 @@
 
   <div>
     <%= form.label :price %> <br>
-    <%= form.text_field :price %>
-  </div>
-
-  <div>
-    <%= form.label :quantity %> <br>
-    <%= form.text_field :quantity %>
+    <%= form.text_field :price, autocomplete: 'off' %>
   </div>
 
   <div>
