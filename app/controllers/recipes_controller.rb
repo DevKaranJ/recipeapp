@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @visibility_status = @recipe.public? ? "Public" : "Private"
+    @visibility_status = @recipe.public? ? 'Public' : 'Private'
     @ingredients = @recipe.ingredients
   end
 

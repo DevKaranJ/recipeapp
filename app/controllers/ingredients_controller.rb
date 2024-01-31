@@ -1,5 +1,4 @@
 class IngredientsController < ApplicationController
-
   def show
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.ingredients
@@ -14,7 +13,7 @@ class IngredientsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @ingredient = @recipe.ingredients.build(ingredient_params)
     if @ingredient.save
-      redirect_to @recipe, notice: "Ingredient added successfully."
+      redirect_to @recipe, notice: 'Ingredient added successfully.'
     else
       render :new
     end
