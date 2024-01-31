@@ -75,3 +75,5 @@ end
 gem 'devise' # for authentication
 
 gem 'nokogiri' # for parsing html
+
+gem 'will_paginate', '~> 3.1.1' # for pagination

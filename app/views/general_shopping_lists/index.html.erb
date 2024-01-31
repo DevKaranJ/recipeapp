@@ -1,0 +1,27 @@
+<h1>General Shopping List</h1>
+
+<% if @missing_foods.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @missing_foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.quantity %></td>
+          <td><%= number_to_currency(food.price) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <p>Total items: <%= @total_items %></p>
+  <p>Total price: <%= number_to_currency(@total_price) %></p>
+<% else %>
+  <p>No missing foods.</p>
+<% end %>
