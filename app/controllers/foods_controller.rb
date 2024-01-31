@@ -8,7 +8,7 @@ class FoodsController < ApplicationController
     @user = current_user
     @food = @user.foods.build
   end
-  
+
   def create
     @food = current_user.foods.build(food_params)
 
