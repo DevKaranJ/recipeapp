@@ -20,19 +20,14 @@
 
   <div>
     <%= link_to "Generate Shopping List" %>
+    <%= link_to "Add Ingredient", new_recipe_ingredient_path(@recipe) %>
     <br>
   </div>
 </div>
 
 <div>
-<%= link_to "Add Ingredient", new_recipe_ingredient_path(@recipe) %>
-</div>
-<div>
-  <% @recipe.ingredients.each do |ingredient| %>
-    <div>
-      <p><%= ingredient.name %>: <%= ingredient.quantity %></p>
-      <%= link_to "Edit", edit_recipe_ingredient_path(@recipe, ingredient) %>
-      <%= button_to "Remove", recipe_ingredient_path(@recipe, ingredient), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-  <% end %>
-</div>
+<% @ingredients.each do |ingredient| %>
+  <div>
+    <p><%= ingredient.food_name %>: <%= ingredient.quantity %> (<%= number_to_currency(ingredient.value_in_dollars) %>)</p>
+  </div>
+<% end %>
