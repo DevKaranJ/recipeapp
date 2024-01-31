@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "recipes" %>
+
 <div class="container">
   <h1>Recipes List</h1>
 
@@ -5,7 +7,8 @@
     <div class="recipe_container">
       <div class="recipe_info">
         <h2> <%= link_to recipe.name, recipes_path %> </h2>
-        <p> <%= button_to "Remove", recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' } %> </p>
+        <p> <%= button_to "Remove", recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' }, class: "button_remove" %>
+        </p>
       </div>
       <div class="description">
         <h3><%= recipe.description %></h3>
