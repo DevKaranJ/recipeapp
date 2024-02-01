@@ -1,0 +1,14 @@
+<h1><%= @recipe.name %></h1>
+<p>By: <%= @recipe.user.name %></p>
+
+<% if @recipe.user == current_user %>
+  <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
+<% end %>
+
+<p><%= @recipe.description %></p>
+<p><strong>Instructions:</strong></p>
+<p><%= @recipe.instructions %></p>
+
+<h2>Ingredients</h2>
+<ul>
+  <% @recipe.foods.each do |food| %>

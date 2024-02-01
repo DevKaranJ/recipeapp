@@ -1,0 +1,9 @@
+<div class="recipe-card">
+  <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+  <p>By: <%= recipe.user.name %></p>
+  <p>Total food items: <%= recipe.foods.count %></p>
+  <p>Total price: $<%= recipe.foods.sum(&:price) %></p>
+  <% if recipe.user == current_user %>
+    <%= link_to "Delete", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure you want to delete this recipe?" } %>
+  <% end %>
+</div>

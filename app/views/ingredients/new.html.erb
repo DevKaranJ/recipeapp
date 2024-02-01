@@ -1,0 +1,20 @@
+<h1>Add Ingredient</h1>
+
+<%= form_with(model: [@recipe, @ingredient], url: recipe_ingredients_path(@recipe), local: true) do |form| %>
+  <div>
+    <%= form.label :food_name %>
+    <%= form.text_field :food_name %>
+  </div>
+
+  <div>
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.label :value_in_dollars %>
+    <%= form.text_field :value_in_dollars %>
+  </div>
+
+  <%= form.submit "Add Ingredient" %>
+<% end %>

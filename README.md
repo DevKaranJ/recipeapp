@@ -127,10 +127,12 @@ rspec
 
 👤 **Second Authors**
 
-👤 **Santiago Ruido**
+👤 **Karan Joshi**
 
-- GitHub: []()
-- LinkedIn: []()
+- GitHub: [@githubhandle](https://github.com/DevKaranJ)
+- Twitter: [@twitterhandle](https://twitter.com/RX0069)
+- Linkdin: [@linkdinhandle](https://www.linkedin.com/in/devkaranj/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
