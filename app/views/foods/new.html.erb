@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag "registration" %>
+<%= stylesheet_link_tag "recipes" %>
+
+<div class="cont">
+  <h1>Add Food</h1>
+
+  <%= form_with model: @food, url: user_foods_path(@user), local: true, method: :post do |form| %>
+    <div>
+      <%= form.label :name %> <br>
+      <%= form.text_field :name, autocomplete: 'off', class:'input' %>
+    </div>
+
+    <div>
+      <%= form.label :measurement_unit %> <br>
+      <%= form.select :measurement_unit, ['mg', 'g', 'kg', 'oz', 'lb', 'units'], class:'input' %>
+    </div>
+
+    <div>
+      <%= form.label :price %> <br>
+      <%= form.number_field :price, in: 1..1000, step: 1, autocomplete: "off", class:'input' %>
+    </div>
+
+    <div>
+      <p><%= form.submit class:'btns' %></p>
+    </div>
+  <% end %>
+</div>
