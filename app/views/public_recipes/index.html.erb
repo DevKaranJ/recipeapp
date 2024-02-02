@@ -6,7 +6,8 @@
   <% @public_recipes.each do |recipe| %>
     <div class="recipe-card">
       <div class="recipe-header">
-        <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
+        <h3><%= link_to recipe.name, user_recipe_path(recipe.user, recipe) %>
+        </h3>
         <p>By <%= recipe.user.email %></p> </div>
       <div class="recipe-body">
         <p><%= recipe.foods.count %> Food Items</p>
