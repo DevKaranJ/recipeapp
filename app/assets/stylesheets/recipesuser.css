@@ -91,3 +91,11 @@ a {
 a:hover {
   color: blue;
 }
+
+.welcome {
+  text-align: center;
+  padding-top: 15%;
+  font-style: oblique;
+  font-size: 35px;
+  font-weight: 900;
+}
