@@ -1,33 +1,36 @@
-<h1>Create your recipe</h1>
+<%= stylesheet_link_tag "new_recipes" %>
 
-<%= form_with model: @recipe, url: user_recipes_path(@user), local: true, method: :post do |form| %>
-  </div> 
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  <div>
+<div class="container">
+  <h1>Create your recipe</h1>
 
-  <div>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </div>
+  <%= form_with model: @recipe, url: user_recipes_path(@user), local: true, method: :post do |form| %>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </div>
 
-  <div>
-    <%= form.label :preparation_time %><br>
-    <%= form.text_field :preparation_time %>
-  </div>
+    <div>
+      <%= form.label :description %><br>
+      <%= form.text_area :description %>
+    </div>
 
-  <div>
-    <%= form.label :cooking_time %><br>
-    <%= form.text_field :cooking_time %>
-  </div>
+    <div>
+      <%= form.label :preparation_time %><br>
+      <%= form.text_field :preparation_time %>
+    </div>
 
-  <div>
-    <%= form.label :public %><br>
-    <%= form.text_field :public %>
-  </div>
+    <div>
+      <%= form.label :cooking_time %><br>
+      <%= form.text_field :cooking_time %>
+    </div>
 
-  <div>
-    <p><%= form.submit "Submit" %></p>
-  </div>
+    <div>
+      <%= form.label :public %><br>
+      <%= form.text_field :public %>
+    </div>
 
-<% end %>
+    <div>
+      <%= form.submit "Submit" %>
+    </div>
+  <% end %>
+</div>
