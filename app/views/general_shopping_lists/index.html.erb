@@ -1,6 +1,8 @@
-<h1>Shopping List</h1>
+<%= stylesheet_link_tag "generalShopping" %>
 
-<p>Amount of Food items to buy: <%= @missing_foods.length %> </p>
+<h1>General Shopping List</h1>
+
+<p>Amount of Food items to buy: <%= @total_items %> </p>
 <p>Total value of Food needed: <%= number_to_currency(@total_price) %> </p>
 
 <table>
@@ -15,8 +17,15 @@
     <% @missing_foods.each do |food_name, missing_quantity| %>
       <tr>
         <td><%= food_name %></td>
-        <td><%= missing_quantity %> </td>
-        <td><%= calculate_price(food_name, missing_quantity) %></td>
+        <td><%= missing_quantity %></td>
+        <td>
+          <% food = Food.find_by(name: food_name) %>
+          <% if food %>
+            <%= number_to_currency(food.price * missing_quantity) %>
+          <% else %>
+            N/A
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
