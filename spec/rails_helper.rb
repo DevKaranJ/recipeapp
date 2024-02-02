@@ -62,5 +62,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # Include Devise test helpers for feature specs
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 end
 Capybara.default_driver = :selenium_chrome
