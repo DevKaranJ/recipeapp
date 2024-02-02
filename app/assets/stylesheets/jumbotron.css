@@ -1,0 +1,38 @@
+.jumbotron { 
+  padding: 30px; /* fills out the jumbotron */
+  /* background-color: #111; */
+}
+
+.container {
+
+  width: 1170px; 
+  margin: 0 auto;  /* centers the container */
+  padding: 0 15px; /* adds some padding to the left and right*/
+}
+
+.jumbotron .container {
+  margin-bottom: 10px; 
+  max-width: 100%; 
+}
+
+.jumbotron h1 { 
+  text-align: center; 
+  color: skyblue;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+a {
+  color: skyblue;
+  text-decoration: underline;
+  margin-right: 10px;
+}
+
+a:hover {
+  color: blue;
+}
