@@ -25,9 +25,9 @@
   </div>
 </div>
 
-<div>
-<% @ingredients.each do |ingredient| %>
-  <div>
-    <p><%= ingredient.food_name %>: <%= ingredient.quantity %> (<%= number_to_currency(ingredient.value_in_dollars) %>)</p>
-  </div>
-<% end %>
+<h2>Ingredients:</h2>
+<ul>
+  <% @ingredients.each do |ingredient| %>
+    <li><%= ingredient.food_name %> - <%= ingredient.quantity %></li>
+  <% end %>
+</ul>

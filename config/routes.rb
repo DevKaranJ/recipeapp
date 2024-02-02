@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'ingredients/new'
-  get 'ingredients/create'
-  get 'ingredients/edit'
-  get 'ingredients/update'
-  get 'ingredients/destroy'
 
   devise_for :users
   root 'users#index'

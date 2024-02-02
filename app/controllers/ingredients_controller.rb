@@ -12,12 +12,15 @@ class IngredientsController < ApplicationController
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @ingredient = @recipe.ingredients.build(ingredient_params)
+
     if @ingredient.save
-      redirect_to @recipe, notice: 'Ingredient added successfully.'
+      redirect_to user_recipe_path(@recipe.user, @recipe), notice: 'Ingredient added successfully.'
     else
+      Rails.logger.debug @ingredient.errors.full_messages # Log errors to the console
       render :new
     end
   end
+
 
   private
 
