@@ -1,0 +1,22 @@
+
+.add-food {
+  background-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  padding: 5px;
+  width: 100%;
+  border: 1px solid;
+  border-collapse: collapse;
+}

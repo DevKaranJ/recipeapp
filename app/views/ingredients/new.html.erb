@@ -1,6 +1,6 @@
 <h1>Add Ingredient</h1>
 
-<%= form_with(model: [@recipe, @ingredient], url: recipe_ingredients_path(@recipe), local: true) do |form| %>
+<%= form_with(model: [@recipe, @ingredient], url: user_recipe_ingredients_path(@recipe), local: true) do |form| %>
   <div>
     <%= form.label :food_name %>
     <%= form.text_field :food_name %>
