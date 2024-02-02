@@ -32,6 +32,3 @@ RSpec.describe 'Testing Food#index view, it should', type: :feature do
     expect(page).to have_content(@food.price)
   end
 end
-
-
-

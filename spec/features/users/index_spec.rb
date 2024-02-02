@@ -11,6 +11,3 @@ RSpec.describe 'User index Page', type: :feature do
     expect(page).to have_content("Welcome to our Recipe App Dear: #{@user.name}")
   end
 end
-  
-
-
