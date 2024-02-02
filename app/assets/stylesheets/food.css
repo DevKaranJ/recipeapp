@@ -1,22 +1,29 @@
 
-.add-food {
-  background-color: #007bff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: #fff;
-  border: none;
-  border-radius: 1px;
-  cursor: pointer;
-  width: 90%;
-  padding: 10px;
-  margin-bottom: 20px;
+
+table {
+  width: 80%;
   text-align: center;
+  border-collapse: collapse;
+  margin: 0 auto 20px;
 }
 
-table,
+thead {
+  background-color: #b89164;
+  color: #fff;
+}
+
 th,
 td {
-  padding: 5px;
-  width: 100%;
-  border: 1px solid;
-  border-collapse: collapse;
+  padding: 12px;
+  text-align: left;
+  font-size: 18px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+}
+
+tbody tr:hover {
+  background-color: #f0f0f0;
 }
