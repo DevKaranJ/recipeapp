@@ -1,3 +1,6 @@
+<%= stylesheet_link_tag "edit_ingredient" %>
+
+<div class="container">
 <h1>Add Ingredient</h1>
 
 <%= form_with(model: [@recipe, @ingredient], url: user_recipe_ingredients_path(@recipe), local: true) do |form| %>
@@ -18,3 +21,4 @@
 
   <%= form.submit "Add Ingredient" %>
 <% end %>
+</div>

@@ -26,8 +26,26 @@
 </div>
 
 <h2>Ingredients:</h2>
-<ul>
-  <% @ingredients.each do |ingredient| %>
-    <li><%= ingredient.food_name %> - <%= ingredient.quantity %></li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Food Name</th>
+      <th>Quantity</th>
+      <th>Value (in dollars)</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.food_name %></td>
+        <td><%= ingredient.quantity %></td>
+        <td><%= number_to_currency(ingredient.value_in_dollars) %></td>
+        <td>
+          <%= link_to 'Edit', edit_user_recipe_ingredient_path(@recipe.user, @recipe, ingredient), class: 'action-button' %>
+          <%= button_to 'Remove', user_recipe_ingredient_path(@recipe.user, @recipe, ingredient), method: :delete, data: { confirm: 'Are you sure?' }, class: 'action-button' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

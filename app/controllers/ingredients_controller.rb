@@ -20,7 +20,30 @@ class IngredientsController < ApplicationController
       render :new
     end
   end
+  
+  def edit
+    @recipe = Recipe.find(params[:recipe_id])
+    @ingredient = @recipe.ingredients.find(params[:id])
+  end
 
+  def update
+    @recipe = Recipe.find(params[:recipe_id])
+    @ingredient = @recipe.ingredients.find(params[:id])
+
+    if @ingredient.update(ingredient_params)
+      redirect_to user_recipe_path(@recipe.user, @recipe), notice: 'Ingredient updated successfully.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:recipe_id])
+    @ingredient = @recipe.ingredients.find(params[:id])
+    @ingredient.destroy
+
+    redirect_to user_recipe_path(@recipe.user, @recipe), notice: 'Ingredient removed successfully.'
+  end
 
   private
 
