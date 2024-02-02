@@ -20,7 +20,7 @@ class IngredientsController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     @recipe = Recipe.find(params[:recipe_id])
     @ingredient = @recipe.ingredients.find(params[:id])
