@@ -22,8 +22,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_31_120337) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "recipe_id", null: false
-    t.index ["recipe_id"], name: "index_foods_on_recipe_id"
     t.index ["user_id"], name: "index_foods_on_user_id"
   end
 
@@ -72,7 +70,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_31_120337) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "foods", "recipes"
   add_foreign_key "foods", "users"
   add_foreign_key "ingredients", "recipes"
   add_foreign_key "recipe_foods", "foods"
