@@ -1,1 +1,9 @@
-<h1>Welcome to Recipe Application</h1>
+<%= stylesheet_link_tag "recipesuser" %>
+
+<div>
+    <div class="welcome">Welcome to our Recipe App Dear:
+        <% if user_signed_in? %>
+            <%= current_user.name %> 👋😊
+        <% end %>
+    </div>
+</div>
