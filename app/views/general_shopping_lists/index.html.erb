@@ -1,27 +1,32 @@
+<%= stylesheet_link_tag "generalShopping" %>
+
 <h1>General Shopping List</h1>
 
-<% if @missing_foods.any? %>
-  <table>
-    <thead>
-      <tr>
-        <th>Food</th>
-        <th>Quantity</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @missing_foods.each do |food| %>
-        <tr>
-          <td><%= food.name %></td>
-          <td><%= food.quantity %></td>
-          <td><%= number_to_currency(food.price) %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<p>Amount of Food items to buy: <%= @total_items %> </p>
+<p>Total value of Food needed: <%= number_to_currency(@total_price) %> </p>
 
-  <p>Total items: <%= @total_items %></p>
-  <p>Total price: <%= number_to_currency(@total_price) %></p>
-<% else %>
-  <p>No missing foods.</p>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @missing_foods.each do |food_name, missing_quantity| %>
+      <tr>
+        <td><%= food_name %></td>
+        <td><%= missing_quantity %></td>
+        <td>
+          <% food = Food.find_by(name: food_name) %>
+          <% if food %>
+            <%= number_to_currency(food.price * missing_quantity) %>
+          <% else %>
+            N/A
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

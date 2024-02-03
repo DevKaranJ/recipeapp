@@ -19,15 +19,33 @@
   </div>
 
   <div>
-    <%= link_to "Generate Shopping List" %>
+  <%= link_to "Generate Shopping List", general_shopping_lists_path %>
     <%= link_to "Add Ingredient", new_user_recipe_ingredient_path(@user, @recipe) %>
     <br>
   </div>
 </div>
 
-<div>
-<% @ingredients.each do |ingredient| %>
-  <div>
-    <p><%= ingredient.food_name %>: <%= ingredient.quantity %> (<%= number_to_currency(ingredient.value_in_dollars) %>)</p>
-  </div>
-<% end %>
+<h2>Ingredients:</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Food Name</th>
+      <th>Quantity</th>
+      <th>Value (in dollars)</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.food_name %></td>
+        <td><%= ingredient.quantity %></td>
+        <td><%= number_to_currency(ingredient.value_in_dollars) %></td>
+        <td>
+          <%= link_to 'Edit', edit_user_recipe_ingredient_path(@recipe.user, @recipe, ingredient), class: 'action-button' %>
+          <%= button_to 'Remove', user_recipe_ingredient_path(@recipe.user, @recipe, ingredient), method: :delete, data: { confirm: 'Are you sure?' }, class: 'action-button' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
