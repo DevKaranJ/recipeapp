@@ -32,5 +32,3 @@ RSpec.describe 'Recipe show page', type: :feature do
     expect(page).to have_content(@recipe.description)
   end
 end
-
-
